@@ -1,8 +1,29 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Quicksand', sans-serif;
 }
 
-a {
-  color: #00B7FF;
+#home {
+  min-height: 100vh;
+  background-color: blueviolet;
+  color: white;
+}
+
+#intro {
+  margin-top: 40vh;
+}
+
+#intro a {
+  margin-top: 5vh;
+  color: mediumvioletred;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.nav-item {
+  border: 1px solid blueviolet;
+  border-radius: 10px;
+}
+
+.nav-link {
+  color: tomato !important;
 }
