@@ -3,9 +3,18 @@ body {
 }
 
 #home {
-  min-height: 100vh;
   background-color: blueviolet;
   color: white;
+  min-height: 100vh;
+}
+
+#input-div {
+  padding: 0;
+}
+
+.input-group-addon {
+  background-color: #ffd700 !important;
+  border-color: none;
 }
 
 #intro {
@@ -13,10 +22,10 @@ body {
 }
 
 #intro a {
-  margin-top: 5vh;
-  color: mediumvioletred;
   background-color: white;
   border-radius: 20px;
+  color: mediumvioletred;
+  margin-top: 5vh;
 }
 
 .nav-item {
@@ -26,4 +35,23 @@ body {
 
 .nav-link {
   color: tomato !important;
+}
+
+.submit-button-div {
+  margin-top: 3vh;
+}
+
+#warning {
+  margin-top: 9vh;
+}
+
+#warning h1 {
+  color: #ffd700;
+  padding-bottom: 5vh;
+}
+
+*:focus {
+  box-shadow: none !important;
+  outline: 0px !important;
+  -webkit-appearance: none;
 }
