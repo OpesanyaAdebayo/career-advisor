@@ -22,9 +22,9 @@ body {
 }
 
 #intro a {
-  background-color: white;
+  background-color: #ffd700;
   border-radius: 20px;
-  color: mediumvioletred;
+  color: black;
   margin-top: 5vh;
 }
 
