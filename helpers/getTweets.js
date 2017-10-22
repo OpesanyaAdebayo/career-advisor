@@ -40,7 +40,6 @@ const processTweets = (username) => {
             if (newTweets.length > 1) {
                 tweets = tweets.concat(filteredTweets);
                 params.max_id = tweets[tweets.length - 1].id - 1;
-                console.log(params.max_id);
                 client.get('statuses/user_timeline', params, fetchTweets)
             } else {
                 resolve(tweets);
@@ -48,10 +47,7 @@ const processTweets = (username) => {
         };
         client.get('statuses/user_timeline', params, fetchTweets);
     });
-    // client.get('statuses/user_timeline', params, fetchTweets);
 }
-
-// processTweets("onejsninja");
 
 module.exports = {
     processTweets: processTweets
