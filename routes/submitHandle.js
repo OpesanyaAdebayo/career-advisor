@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var getTweets = require("../helpers/getTweets")
 var personality = require("../helpers/personality")
+var saveProfile = require("../db/saveProfile")
 /* GET home page. */
 
 router.post('/', function (req, res, next) {
@@ -14,7 +15,10 @@ router.post('/', function (req, res, next) {
             return personality.getPersonality(tweets)
         })
         .then(function (profile) {
-            console.log(profile);
+            return saveProfile.saveProfile(profile)
+        })
+        .then(function(feedback) {
+            console.log(feedback)
         });
 })
 module.exports = router;

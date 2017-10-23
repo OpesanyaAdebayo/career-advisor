@@ -5,6 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+require('dotenv').config();
+
 var index = require('./routes/index');
 var inputHandle = require('./routes/inputHandle');
 var submitHandle = require('./routes/submitHandle');
@@ -33,6 +35,13 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
+
+// This is for error handling with promises
+process.on('unhandledRejection', (reason, p) => {
+  console.log('Unhandled Rejection at: Promise', p, 'reason:', reason);
+  // application specific logging, throwing an error, or other logic here
+});
+
 
 // error handler
 app.use(function(err, req, res, next) {
