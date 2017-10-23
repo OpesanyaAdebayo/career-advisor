@@ -4,6 +4,8 @@ var personality_insights = new PersonalityInsightsV3({
     password: process.env.PERSONALITY_INSIGHTS_PASSWORD,
     version_date: '2017-10-13'
 });
+var PersonalityTextSummaries = require('personality-text-summary');
+var v3EnglishTextSummaries = new PersonalityTextSummaries({ locale: 'en', version: 'v3' });
 
 const getPersonality = (tweets) => {
     return new Promise((resolve, reject) => {
@@ -27,6 +29,20 @@ const getPersonality = (tweets) => {
 
 }
 
+const getTextSummary = (personalityProfile) => {
+    return new Promise((resolve,reject) => {
+        let textSummary  = v3EnglishTextSummaries.getSummary(personalityProfile);
+        if(typeof(textSummary) !== 'string') {
+            reject(Error("could not get summary."))
+        }
+        else  {
+            console.log(typeof(textSummary));
+            resolve(textSummary);
+        }
+    })
+}
+
 module.exports = {
-    getPersonality: getPersonality
+    getPersonality: getPersonality,
+    getTextSummary: getTextSummary
 };

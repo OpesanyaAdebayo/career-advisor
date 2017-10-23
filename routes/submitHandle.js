@@ -17,8 +17,8 @@ router.post('/', function (req, res, next) {
         .then(function (profile) {
             return saveProfile.saveProfile(profile)
         })
-        .then(function(feedback) {
-            console.log(feedback)
+        .then(function(profile) {
+            return personality.getTextSummary(profile)
         });
 })
 module.exports = router;
