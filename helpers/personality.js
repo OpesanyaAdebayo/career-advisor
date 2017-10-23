@@ -19,7 +19,7 @@ const getPersonality = (tweets) => {
         };
         personality_insights.profile(params, function (error, personalityProfile) {
             if (error)
-                return reject(Error(error));
+                reject(Error(error));
             else
                 resolve(personalityProfile);
         });
