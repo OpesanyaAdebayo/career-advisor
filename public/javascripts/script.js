@@ -1,7 +1,7 @@
 console.log($("#submit-handle").disabled);
 $("#twitter-handle-form").submit(function (event) {
     let processedHandle;
-    let rawFormInput = $("#twitter-handle").val();
+    let rawFormInput = $("#twitterHandle").val();
     processedHandle = rawFormInput.toLowerCase();
     $.post("/submitHandle", {handle: processedHandle}, function(data) {
         console.log(data);
@@ -9,7 +9,7 @@ $("#twitter-handle-form").submit(function (event) {
     event.preventDefault();
 });
 
-$("#twitter-handle").keyup(function () {
+$("#twitterHandle").keyup(function () {
     if ($(this).val().length >= 1 && $(this).val().charAt(0) != "@") {
         $("#submit-handle").removeAttr('disabled');
     }

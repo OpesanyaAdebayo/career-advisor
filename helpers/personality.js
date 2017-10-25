@@ -36,7 +36,7 @@ const getTextSummary = (personalityProfile) => {
             reject(Error("could not get summary."))
         }
         else  {
-            console.log(typeof(textSummary));
+            console.log(textSummary);
             resolve(textSummary);
         }
     })
