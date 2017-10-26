@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://use.fontawesome.com/1090ba086e.js"></script>
+</head>
+
+<body>
+    <section id="home">
+        <div class="container">
+            <div class="main">
+                <div class="row">
+                    <div id="loginContainer">
+                        <div class="col-lg-12 col-md-12 col-sm-12" id="loginDiv">
+                            <h3 style="color: #007bff">Login</h3>
+                            <form id="loginForm">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Email address" required>
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-lock" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-md btn-primary" id="loginButton">Continue</button>
+                            </form>
+                            <h5 class="text-right" style="color: black; margin-top: 4vh">
+                                <small>or</small> &nbsp;
+                                <button class="btn btn-md btn-danger" id="signup">Sign Up</button>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div id="signupContainer">
+                        <div class="col-lg-12 col-md-12 col-sm-12" id="signupDiv">
+                            <h3 class="red">Sign Up</h3>
+                            <form id="signupForm">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" required>
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-user" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" required>
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-user" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Email address" required>
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-lock" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-md btn-danger" id="signupButton">Continue</button>
+                            </form>
+                            <h5 class="text-right" style="color: black; margin-top: 4vh">
+                                <small>or</small> &nbsp;
+                                <button class="btn btn-md btn-primary" id="login">Login</button>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+    <script src="/javascripts/script.js"></script>
+</body>
+
+</html>
