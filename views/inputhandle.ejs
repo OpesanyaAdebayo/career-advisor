@@ -11,13 +11,17 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 
+<!-- <style>
+    body {
+        background-color: rgb(8, 6, 78);
+    }
+</style> -->
+
 <body>
-    <section id="home">
+    <section>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-xs-8 col-sm-8 col-md-6 col-lg-5" id="warning">
-                    <h1>
-                        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> WARNING !</h1>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center" id="warning">
                     <p>We know you&#8217;ve tried, and have probably had enough of those endless career questionnaires that
                         don't give accurate results.</p>
                     <p>Well, so have we!</p>
@@ -28,17 +32,15 @@
                     </p>
                     <br>
                     <p>Please enter your Twitter handle below.</p>
-                    <form id="twitter-handle-form">
-                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" id="input-div">
-                            <div class="input-group mb-2 mb-sm-0">
+                    <div class="col-md-3" id="twitterFormDiv">
+                        <form id="twitterHandleForm">
+                            <div class="input-group">
                                 <div class="input-group-addon">@</div>
                                 <input type="text" class="form-control" id="twitterHandle" name="twitterHandle" placeholder="Twitter handle">
                             </div>
-                        </div>
-                        <div class="submit-button-div">
-                            <button type="submit" class="btn btn-warning" id="submit-handle" disabled >Submit</button>
-                        </div>
-                    </form>
+                            <button type="submit" class="btn btn-warning" id="submitHandle" disabled>Submit</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 require('dotenv').config();
 
 var index = require('./routes/index');
+var auth = require('./routes/auth');
 var inputHandle = require('./routes/inputHandle');
 var submitHandle = require('./routes/submitHandle');
 
@@ -26,6 +27,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
+app.use('/auth', auth);
 app.use('/inputHandle', inputHandle);
 app.use('/submitHandle', submitHandle);
 

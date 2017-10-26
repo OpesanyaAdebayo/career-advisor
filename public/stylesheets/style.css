@@ -1,20 +1,49 @@
+
 body {
   font-family: 'Quicksand', sans-serif;
 }
 
 #home {
-  background-color: blueviolet;
+  background-color: rgb(8, 6, 78);
   color: white;
-  min-height: 100vh;
+  height: 100vh;
+}
+.gold {
+  color: #ffd700;
 }
 
-#input-div {
+input {
+  background-color: transparent !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-radius: 0 !important;
+  border-top: 0 !important;
+  /* color: white !important; */
+}
+
+#inputDiv {
   padding: 0;
 }
 
 .input-group-addon {
-  background-color: #ffd700 !important;
   border-color: none;
+  border: none;
+  background-color: transparent;
+}
+
+#loginContainer {
+  display: none;
+}
+
+#loginDiv, #signupDiv {
+  background-color: #ffffff;
+  padding: 30px;
+}
+
+.main {
+  left:35%;
+  position: absolute;
+  top:15%;
 }
 
 #intro {
@@ -28,6 +57,10 @@ body {
   margin-top: 5vh;
 }
 
+#loginButton, #loginContainer form, #signupButton, #signupContainer form {
+  margin-top: 4vh;
+}
+
 .nav-item {
   border: 1px solid blueviolet;
   border-radius: 10px;
@@ -37,12 +70,22 @@ body {
   color: tomato !important;
 }
 
-.submit-button-div {
-  margin-top: 3vh;
+.red {
+  color: red;
+}
+
+#twitterFormDiv {
+  position: relative;
+  left: 39%;
+  top: 5%;
+}
+
+#twitterFormDiv button {
+  margin-top: 4vh;
 }
 
 #warning {
-  margin-top: 9vh;
+  margin-top: 15vh;
 }
 
 #warning h1 {
@@ -55,3 +98,4 @@ body {
   outline: 0px !important;
   -webkit-appearance: none;
 }
+
