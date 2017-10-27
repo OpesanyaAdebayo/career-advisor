@@ -4,12 +4,15 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 require('dotenv').config();
+
 
 var index = require('./routes/index');
 var auth = require('./routes/auth');
-var inputHandle = require('./routes/inputHandle');
+var dashboard = require('./routes/dashboard');
+var inputhandle = require('./routes/inputhandle');
 var submitHandle = require('./routes/submitHandle');
 
 var app = express();
@@ -26,9 +29,23 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+    secret: 'foo', //change this later
+    resave: false, //don't save session if unmodified
+    saveUninitialized: false, // don't create session until something stored
+    store: new MongoStore({
+        url: process.env.MLAB_SESSION_URI, //replace with database url from env file
+        autoRemove: 'interval',
+        autoRemoveInterval: 10 // In minutes. Default
+    }),
+    // cookie: {secure:true} Uncomment in production
+}));
+
+
 app.use('/', index);
 app.use('/auth', auth);
-app.use('/inputHandle', inputHandle);
+app.use('/dashboard', dashboard);
+app.use('/inputhandle', inputhandle);
 app.use('/submitHandle', submitHandle);
 
 // catch 404 and forward to error handler

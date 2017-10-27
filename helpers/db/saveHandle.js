@@ -3,7 +3,7 @@ const dbUsername = process.env.DB_USERNAME
 const dbPassword = process.env.DB_PASSWORD
 var db = mongojs(process.env.MLAB_URI, ['users'])
 
-const saveProfile = (profile, UID) => {
+const saveToProfile = (handle, UID) => {
     return new Promise((resolve, reject) => {
         db.users.findAndModify({
             query: {
@@ -11,17 +11,20 @@ const saveProfile = (profile, UID) => {
             },
             update: {
                 $set: {
-                    personality_profile: profile
+                    twitterHandle: handle
                 }
             },
             new: true
         }, function (err, profile, lastErrorObject) {
-            console.log(lastErrorObject);
-            resolve(profile)
+            if (!err) {
+                resolve(lastErrorObject)
+            } else {
+                reject(Error(err));
+            }
         })
     })
 }
 
 module.exports = {
-    saveProfile: saveProfile
+    saveToProfile: saveToProfile
 }
