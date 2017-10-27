@@ -30,12 +30,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
-    secret: 'foo', //change this later
+    secret: 'zxcvblkqq',
     resave: false, //don't save session if unmodified
     saveUninitialized: false, // don't create session until something stored
     store: new MongoStore({
         url: process.env.MLAB_SESSION_URI, //replace with database url from env file
         autoRemove: 'interval',
+        maxAge: 36000, //session expires in one hour
         autoRemoveInterval: 10 // In minutes. Default
     }),
     // cookie: {secure:true} Uncomment in production
