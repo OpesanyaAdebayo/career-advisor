@@ -18,6 +18,7 @@ router.get('/', function (req, res, next) {
 
 router.post('/', function (req, res, next) {
     let handle = req.body.twitterHandle;
+    console.log(req.body);
     saveHandle.saveToProfile(handle, req.session.UID).then(function (feedback) {
         if(feedback.updatedExisting == true) {
             res.json(feedback);
