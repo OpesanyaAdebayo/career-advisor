@@ -1,9 +1,6 @@
 var express = require('express');
-var router = express.Router();
-var getTweets = require("../helpers/getTweets")
-var personality = require("../helpers/personality")
-var saveProfile = require("../helpers/db/saveProfile")
 var saveHandle = require("../helpers/db/saveHandle")
+var router = express.Router();
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
