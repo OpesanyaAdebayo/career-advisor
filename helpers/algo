@@ -1,0 +1,23 @@
+A. Check for Extraversion
+
+Case 1: High Extraversion
+- Check for agreeableness.
+- If Agreeableness is high, the person is SOCIAL
+- If Agreeableness is low, the person is ENTERPRISING
+
+Case 2: Low Extraversion
+- Check for Openness
+
+
+B. Check for Openness
+
+Case 1: High Openness
+- Check for artistic_interest
+- If artistic_interest is low, the person is INVESTIGATIVE
+- If artistic_interest is high, the person is ARTISTIC
+
+C. Check for Conscientiousness
+- If Conscientiousness is high, the person is CONVENTIONAL
+
+
+// Remove all traits with percentage values between 32% and 68%, as it's inside the common people.
