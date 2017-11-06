@@ -22,6 +22,26 @@ const saveProfile = (profile, UID) => {
     })
 }
 
+const saveSummary = (summary, UID) => {
+    return new Promise((resolve, reject) => {
+        db.users.findAndModify({
+            query: {
+                _id: mongojs.ObjectId(UID)
+            },
+            update: {
+                $set: {
+                    summary: summary
+                }
+            },
+            new: true
+        }, function (err, profile, lastErrorObject) {
+            console.log(lastErrorObject);
+            resolve(profile)
+        })
+    })
+}
+
 module.exports = {
-    saveProfile: saveProfile
+    saveProfile: saveProfile,
+    saveSummary: saveSummary
 }

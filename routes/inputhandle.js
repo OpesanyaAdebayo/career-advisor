@@ -1,6 +1,10 @@
-var express = require('express');
+var express = require('express')
 var saveHandle = require("../helpers/db/saveHandle")
 var router = express.Router();
+var getTweets = require("../helpers/getTweets")
+var personality = require("../helpers/personality")
+var getProfile = require("../helpers/db/getProfile")
+var saveProfile = require("../helpers/db/saveProfile");
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -15,28 +19,21 @@ router.get('/', function (req, res, next) {
 
 router.post('/', function (req, res, next) {
     let handle = req.body.twitterHandle;
-    console.log(req.body);
     saveHandle.saveToProfile(handle, req.session.UID).then(function (feedback) {
-        if(feedback.updatedExisting == true) {
-            res.json(feedback);
-        }
-        else {
-            res.redirect('/');
-        }
+        return feedback
+    }).then(function (feedback) {
+        return getTweets.processTweets(handle)
+    }).then(function (tweets) {
+        return personality.getPersonality(tweets)
+    }).then(function (profile) {
+        return saveProfile.saveProfile(profile,req.session.UID)
+    }).then(function (personalityProfile) {
+        return personality.getTextSummary(personalityProfile.personality_profile)
+    }).then(function(summary) {
+        return saveProfile.saveSummary(summary,req.session.UID)
+    }).then(function(savedProfile){
+        res.json(savedProfile)
     })
-    // getTweets.processTweets(handle)
-    //     .then(function (tweets) {
-    //         return tweets
-    //     })
-    //     .then(function (tweets) {
-    //         return personality.getPersonality(tweets)
-    //     })
-    //     .then(function (profile) {
-    //         return saveProfile.saveProfile(profile)
-    //     })
-    //     .then(function (profile) {
-    //         return personality.getTextSummary(profile)
-    //     });
 })
 
 module.exports = router;

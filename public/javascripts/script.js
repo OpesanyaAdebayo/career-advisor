@@ -36,9 +36,8 @@ $("#signupForm").submit(function (event) {
 
 $("#twitterHandleForm").submit(function (event) {
     $("#submitHandle").attr('disabled', 'disabled');
-    let processedHandle;
     let rawFormInput = $("#twitterHandle").val();
-    processedHandle = rawFormInput.toLowerCase();
+    let processedHandle = rawFormInput.toLowerCase();
     $.post("/inputhandle", $("#twitterHandleForm").serialize(), function (data) {
         window.location.href = '/dashboard';
         return false;
@@ -46,12 +45,3 @@ $("#twitterHandleForm").submit(function (event) {
     event.preventDefault();
 });
 
-$("#twitterHandle").keyup(function () {
-    if ($(this).val().length >= 1 && $(this).val().charAt(0) != "@") {
-        $("#submitHandle").removeAttr('disabled');
-    }
-    if ($(this).val().length < 1) {
-        $("#submitHandle").attr('disabled', 'disabled');
-        $("#signup").attr('disabled', 'disabled');
-    }
-})
