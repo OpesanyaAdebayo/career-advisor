@@ -3,11 +3,20 @@ body {
   font-family: 'Quicksand', sans-serif;
 }
 
+.card {
+  /* border: 1px solid #ffd700; */
+}
+.card-header {
+  background-color: rgb(8, 6, 78);
+  color: white;
+}
+
 #home {
   background-color: rgb(8, 6, 78);
   color: white;
   height: 100vh;
 }
+
 .gold {
   color: #ffd700;
 }
@@ -74,6 +83,10 @@ input {
   color: red;
 }
 
+#summary {
+  margin-top: 5vh;
+}
+
 #twitterFormDiv {
   position: relative;
   left: 39%;
@@ -91,6 +104,11 @@ input {
 #warning h1 {
   color: #ffd700;
   padding-bottom: 5vh;
+}
+
+#welcome {
+  background-image: url('../images/loginbg.png');
+  /* padding: 15px; */
 }
 
 *:focus {
