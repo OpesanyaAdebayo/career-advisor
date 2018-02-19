@@ -14,12 +14,13 @@ const processTweets = (username) => {
             include_rts: false,
             trim_user: true,
             exclude_replies: true
-        }
+        };
         let tweets = [];
         const fetchTweets = (error, newTweets) => {
             if (error) {
                 return reject(Error(error));
             }
+            // Filter out tweets with only relevant info
             filteredTweets = newTweets.map(function (tweet) {
                 return {
                     id: tweet.id_str,
@@ -30,18 +31,19 @@ const processTweets = (username) => {
                     reply: tweet.in_reply_to_screen_name != null
                 };
             });
+            // check if tweets are actually retrieved and get more tweets if yes.
             if (newTweets.length > 1) {
                 tweets = tweets.concat(filteredTweets);
                 params.max_id = tweets[tweets.length - 1].id - 1;
-                client.get('statuses/user_timeline', params, fetchTweets)
+                client.get('statuses/user_timeline', params, fetchTweets);
             } else {
-                console.log(tweets.length);
+                //if there are no more tweets to retrieve, just resolve already fetched tweets
                 resolve(tweets);
             }
         };
         client.get('statuses/user_timeline', params, fetchTweets);
     });
-}
+};
 
 module.exports = {
     processTweets: processTweets

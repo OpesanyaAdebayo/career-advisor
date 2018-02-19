@@ -10,7 +10,7 @@ var v3EnglishTextSummaries = new PersonalityTextSummaries({ locale: 'en', versio
 const getPersonality = (tweets) => {
     return new Promise((resolve, reject) => {
         let params = {
-            // Get the content items from the JSON file.
+            // Content items are tweets.
             content_items: tweets,
             consumption_preferences: true,
             raw_scores: true,
@@ -27,20 +27,19 @@ const getPersonality = (tweets) => {
         });
     });
 
-}
+};
 
 const getTextSummary = (personalityProfile) => {
     return new Promise((resolve,reject) => {
         let textSummary  = v3EnglishTextSummaries.getSummary(personalityProfile);
         if(typeof(textSummary) !== 'string') {
-            reject(Error("could not get summary."))
+            reject(Error("could not get summary."));
         }
         else  {
-            console.log(textSummary);
             resolve(textSummary);
         }
-    })
-}
+    });
+};
 
 module.exports = {
     getPersonality: getPersonality,
