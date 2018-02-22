@@ -1,21 +1,21 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+let express = require('express');
+let path = require('path');
+let favicon = require('serve-favicon');
+let logger = require('morgan');
+let cookieParser = require('cookie-parser');
+let bodyParser = require('body-parser');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 require('dotenv').config();
 
 
-var index = require('./routes/index');
-var auth = require('./routes/auth');
-var dashboard = require('./routes/dashboard');
-var inputhandle = require('./routes/inputhandle');
-var submitHandle = require('./routes/submitHandle');
+let index = require('./routes/index');
+let auth = require('./routes/auth');
+let dashboard = require('./routes/dashboard');
+let inputhandle = require('./routes/inputhandle');
+let submitHandle = require('./routes/submitHandle');
 
-var app = express();
+let app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -49,7 +49,7 @@ app.use('/submitHandle', submitHandle);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
+  let err = new Error('Not Found');
   err.status = 404;
   next(err);
 });

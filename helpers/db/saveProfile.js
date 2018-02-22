@@ -1,7 +1,7 @@
-var mongojs = require('mongojs');
+let mongojs =  require('mongojs');
 const dbUsername = process.env.DB_USERNAME;
 const dbPassword = process.env.DB_PASSWORD;
-var db = mongojs(process.env.MLAB_URI, ['users']);
+let db = mongojs(process.env.MLAB_URI, ['users']);
 
 const saveProfile = (profile, UID) => {
     return new Promise((resolve, reject) => {
@@ -16,8 +16,10 @@ const saveProfile = (profile, UID) => {
             },
             new: true
         }, function (err, profile, lastErrorObject) {
-            console.log(lastErrorObject);
-            resolve(profile);
+            if (err) {
+                reject(Error(err));
+            }
+            else resolve(profile);
         });
     });
 };
@@ -35,8 +37,10 @@ const saveSummary = (summary, UID) => {
             },
             new: true
         }, function (err, profile, lastErrorObject) {
-            console.log(lastErrorObject);
-            resolve(profile);
+            if (err) {
+                reject(Error(err));
+            }
+            else resolve(profile);
         });
     });
 };

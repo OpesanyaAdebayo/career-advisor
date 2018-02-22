@@ -1,14 +1,16 @@
 
 body {
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 .card {
   /* border: 1px solid #ffd700; */
 }
 .card-header {
-  background-color: rgb(8, 6, 78);
-  color: white;
+  border-top: 6px solid rgb(64, 164, 244);
+  border-bottom: none;
+  /* background-color: rgb(8, 6, 78); */
+  /* color: rgba(255,255,255,.80); */
 }
 
 #home {
@@ -40,21 +42,6 @@ input {
   background-color: transparent;
 }
 
-#loginContainer {
-  display: none;
-}
-
-#loginDiv, #signupDiv {
-  background-color: #ffffff;
-  padding: 30px;
-}
-
-.main {
-  left:39%;
-  position: absolute;
-  top:15%;
-}
-
 #intro {
   margin-top: 40vh;
 }
@@ -66,8 +53,24 @@ input {
   margin-top: 5vh;
 }
 
+#loginContainer {
+  display: none;
+}
+
+#loginDiv, #signupDiv {
+  background-color: #ffffff;
+  padding: 30px;
+}
+
+
 #loginButton, #loginContainer form, #signupButton, #signupContainer form {
   margin-top: 4vh;
+}
+
+.main {
+  left:39%;
+  position: absolute;
+  top:15%;
 }
 
 .nav-item {
@@ -77,6 +80,11 @@ input {
 
 .nav-link {
   color: tomato !important;
+}
+
+p, li {
+  color: rgba(0,0,0,.70) !important;
+  font-weight: 400;
 }
 
 .red {
@@ -108,7 +116,7 @@ input {
 
 #welcome {
   background-image: url('../images/loginbg.png');
-  /* padding: 15px; */
+  color: white;
 }
 
 *:focus {
