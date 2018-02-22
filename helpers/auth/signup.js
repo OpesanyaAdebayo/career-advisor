@@ -1,8 +1,8 @@
-var mongojs = require('mongojs');
-var db = mongojs(process.env.MLAB_URI, ['users']) // Replace with mlab credentials from .env file
-var bcrypt = require('bcryptjs');
-var salt = bcrypt.genSaltSync(10);
-let errormsg = ""
+let mongojs =  require('mongojs');
+let bcrypt = require('bcryptjs');
+let db = mongojs(process.env.MLAB_URI, ['users']); // Replace with mlab credentials from .env file
+let salt = bcrypt.genSaltSync(10);
+let errormsg;
 
 const processFormInput = (formInput) => {
     return new Promise((resolve, reject) => {
@@ -18,12 +18,12 @@ const processFormInput = (formInput) => {
                     resolve(savedProfile);
                 });
             } else {
-                errormsg = "Someone already registered with this email"
+                errormsg = "Someone already registered with this email";
                 resolve(errormsg);
             }
         });
     });
-}
+};
 
 
 module.exports = {

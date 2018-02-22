@@ -1,12 +1,12 @@
 $("#signup").click(function () {
     $("#loginContainer").hide();
     $("#signupContainer").show();
-})
+});
 
 $("#login").click(function () {
     $("#signupContainer").hide();
     $("#loginContainer").show();
-})
+});
 
 $("#loginForm").submit(function (event) {
     $("#loginButton").attr('disabled', 'disabled');
@@ -14,9 +14,9 @@ $("#loginForm").submit(function (event) {
     $("small").hide();
     $.post("/auth/login", $("#loginForm").serialize(), function (data) {
         window.location.href = '/dashboard';
-    })
+    });
     event.preventDefault();
-})
+});
 
 $("#signupForm").submit(function (event) {
     $("#signupButton").attr('disabled', 'disabled');
@@ -30,9 +30,9 @@ $("#signupForm").submit(function (event) {
         else {
             alert(data);
         }
-    })
+    });
     event.preventDefault();
-})
+});
 
 $("#twitterHandleForm").submit(function (event) {
     $("#submitHandle").attr('disabled', 'disabled');
@@ -41,7 +41,7 @@ $("#twitterHandleForm").submit(function (event) {
     $.post("/inputhandle", $("#twitterHandleForm").serialize(), function (data) {
         window.location.href = '/dashboard';
         return false;
-    })
+    });
     event.preventDefault();
 });
 
