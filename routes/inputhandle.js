@@ -1,10 +1,10 @@
 var express = require('express');
-var saveHandle = require("../helpers/db/saveHandle");
-var router = express.Router();
-var getTweets = require("../helpers/getTweets");
-var personality = require("../helpers/personality");
-var getProfile = require("../helpers/db/getProfile");
-var saveProfile = require("../helpers/db/saveProfile");
+let router = express.Router();
+let saveHandle =require('../helpers/db/saveHandle');
+let getTweets = require('../helpers/getTweets');
+let personality = require('../helpers/personality');
+let getProfile = require('../helpers/db/getProfile');
+let saveProfile = require('../helpers/db/saveProfile');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {

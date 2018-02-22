@@ -1,14 +1,14 @@
 var express = require('express');
-var router = express.Router();
-var getProfile = require("../helpers/db/getProfile");
-var jobdescs = require("../helpers/jobdesc.json");
+let router = express.Router();
+let getProfile = require('../helpers/db/getProfile');
+let jobdescs = require('../helpers/jobdesc.json');
 /* GET home page. */
 router.get('/', function (req, res, next) {
   if (!req.session.UID) {
     res.redirect('/');
   } else {
 
-    getProfile.getProfile(req.session.UID).then(function (retrievedProfile) {
+    getProfile.getProfile(req.session.UID).then((retrievedProfile) => {
 
       var userProfile = retrievedProfile;
       delete userProfile.password;

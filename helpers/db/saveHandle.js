@@ -1,7 +1,7 @@
-var mongojs = require('mongojs');
+let mongojs =  require('mongojs');
 const dbUsername = process.env.DB_USERNAME;
 const dbPassword = process.env.DB_PASSWORD;
-var db = mongojs(process.env.MLAB_URI, ['users']);
+let db = mongojs(process.env.MLAB_URI, ['users']);
 
 const saveToProfile = (handle, UID) => {
     return new Promise((resolve, reject) => {

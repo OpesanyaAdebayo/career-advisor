@@ -1,23 +1,24 @@
-A. Check for Extraversion
+OPENNESS
 
-Case 1: High Extraversion
-- Check for agreeableness.
-- If Agreeableness is high, the person is SOCIAL
-- If Agreeableness is low, the person is ENTERPRISING
+-- Strong correlation with ARTISTIC and moderate with INVESTIGATIVE
+    - If Agreeableness is high, the person is ARTISTIC
+    - Else, the person is INVESTIGATIVE
 
-Case 2: Low Extraversion
-- Check for Openness
+EXTRAVERSION
 
+-- Strong correlation with ENTERPRISING and moderate with SOCIAL
+    - If AGREEABLENESS is high, the person is SOCIAL
+    - Else, the person is ENTERPRISING
 
-B. Check for Openness
+AGREEABLENESS
 
-Case 1: High Openness
-- Check for artistic_interest
-- If artistic_interest is low, the person is INVESTIGATIVE
-- If artistic_interest is high, the person is ARTISTIC
+-- Moderate correlation with SOCIAL
 
-C. Check for Conscientiousness
-- If Conscientiousness is high, the person is CONVENTIONAL
-
+CONSCIENTIOUSNESS
+-- Moderate correlation with CONVENTIONAL
 
 // Remove all traits with percentage values between 32% and 68%, as it's inside the common people.
+
+
+
+Get the personality object, get the trait values into an array, sort the array (highest to lowest), get the first two elements.
