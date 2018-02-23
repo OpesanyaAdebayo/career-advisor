@@ -17,8 +17,8 @@
         <div class="col-md-12 welcome">
           <h2 class="text-center">Welcome,
             <span class="gold">
-              <%= userProfile.firstName %>
-              <%= userProfile.lastName %>
+              <%= firstName %>
+              <%= lastName %>
             </span>
           </h2>
         </div>
@@ -34,7 +34,7 @@
             <h4 class="card-header">About You</h4>
             <div class="card-body">
               <!-- <h4 class="card-title">About You</h4> -->
-              <p class="card-text"> <%= userProfile.summary %> </p>
+              <p class="card-text"> <%= profileSummary %> </p>
             </div>
           </div>
         </div>
@@ -44,11 +44,11 @@
             <div class="card-body">
               <!-- <h4 class="card-title">You are very likely to do best in careers that:</h4> -->
               <ul>
-                <% for (let i=0; i < jobdesc.length; i++) { %>
-                  <li> <%= jobdesc[i] %> </li>
+                <% for (let i=0; i < dominantInterestDescription.length; i++) { %>
+                  <li> <%= dominantInterestDescription[i] %> </li>
                 <% } %>
               </ul>
-              <!-- <p class="card-text"> <%= userProfile.summary %> </p> -->
+
             </div>
           </div>
         </div>
