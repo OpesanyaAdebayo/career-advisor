@@ -1,9 +1,0 @@
-{
-    "occupations": {
-        "Artistic": ["Require activities which are perceived as ambiguous, unsystematic, or disordered.", "Use tools to produce different forms of creative art.","Allow for expression of creative and artistic competencies.","Generally do not involve highly ordered or strictly repetitive activities","Help you see yourself as expressive, creative, original and independent.", "Encourage expressive freedom and idea sharing."],
-        "Investigative": ["Work with ideas, require an extensive amount of thinking, and rely on mental prowess.","Require continuous learning, innovation, and fast-paced improvement.", "Demand close collaboration with other colleagues.", "Require proper handling of failures, feedback and criticism."," In troubleshooting and problem solving, they depend on thinking, collecting data, and making careful analyses."],
-        "Social": ["Involve coordinating others in order to teach, develop, or train them.","Require consistent interaction with other people and emphasize social competencies.","Value helping people, sharing information and solving social problems.","Generally do not require the use of tools or machines to get work done.","Help you see yourself as supportive, friendly, understanding and trustworthy."],
-        "Enterprising": [""],
-        "Conventional": ""
-    }
-}
