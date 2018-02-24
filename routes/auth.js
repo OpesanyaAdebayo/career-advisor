@@ -5,7 +5,7 @@ let signup =  require('../helpers/auth/signup');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  if (req.session.UID) {
+  if (req.session.UID !== undefined) {
     res.redirect('/dashboard');
   } else {
     res.render('auth', {
@@ -20,7 +20,7 @@ router.post('/login', function (req, res, next) {
 
 router.post('/signup', function (req, res, next) {
   signup.processFormInput(req.body).then(function (feedback) {
-    if (typeof (feedback) == 'object') {
+    if (feedback._id !== undefined) {
       req.session.UID = feedback._id;
       delete feedback.password;
       delete feedback._id;
