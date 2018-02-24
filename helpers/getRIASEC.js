@@ -27,8 +27,8 @@ const sortProfile = (profile) => {
 
 const getDominantInterest = (unsortedProfile, sortedProfile) => {
     // extract the two highest personality traits
-    let highestTrait = sortedProfile[sortedProfile.length-1];
-    let secondHighestTrait = sortedProfile[sortedProfile.length-2];
+    let highestTrait = sortedProfile[sortedProfile.length - 1];
+    let secondHighestTrait = sortedProfile[sortedProfile.length - 2];
 
     //if neuroticism has highest score, pick the second highest as dominant
     if (highestTrait.trait_id == 'big5_neuroticism') {
@@ -40,20 +40,15 @@ const getDominantInterest = (unsortedProfile, sortedProfile) => {
 
     if (highestTrait.trait_id == 'big5_openness' && (highestTrait.children[1].percentile > highestTrait.children[4].percentile)) {
         dominantInterest = "Artistic";
-    }
-    else if (highestTrait.trait_id == 'big5_openness' && (highestTrait.children[1].percentile < highestTrait.children[4].percentile)) {
+    } else if (highestTrait.trait_id == 'big5_openness' && (highestTrait.children[1].percentile < highestTrait.children[4].percentile)) {
         dominantInterest = "Investigative";
-    }
-    else if (highestTrait.trait_id == 'big5_extraversion' && (unsortedProfile.personality_profile.personality[3].percentile > 0.67999999999)) {
+    } else if (highestTrait.trait_id == 'big5_extraversion' && (unsortedProfile.personality_profile.personality[3].percentile > 0.67999999999)) {
         dominantInterest = "Social";
-    }
-    else if (highestTrait.trait_id == 'big5_extraversion' && (unsortedProfile.personality_profile.personality[3].percentile <= 0.67999999999)) {
+    } else if (highestTrait.trait_id == 'big5_extraversion' && (unsortedProfile.personality_profile.personality[3].percentile <= 0.67999999999)) {
         dominantInterest = "Enterprising";
-    }
-    else if (highestTrait.trait_id == 'big5_agreeableness') {
+    } else if (highestTrait.trait_id == 'big5_agreeableness') {
         dominantInterest = 'Social';
-    }
-    else if(highestTrait.trait_id == 'big5_conscientiousness') {
+    } else if (highestTrait.trait_id == 'big5_conscientiousness') {
         dominantInterest = 'Conventional';
     }
 
