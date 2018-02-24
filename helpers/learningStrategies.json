@@ -1,0 +1,9 @@
+{
+    "strategies": {
+        "Openness": ["Make sure your thoughts and priorities are clearly organized and outlined.", "Spend some time deepening understanding instead of just jumping from concept to concept. You can use illustrations and acronymns to reinforce understanding of concepts and ideas."],
+        "Conscientiousness": [],
+        "Extraversion": ["Stay in a quiet place. As much as possible, take any possible distractions out of reach.", "Take intermittent breaks to walk around and avoid being seated for too long.", "Employ physical rewards (like food, video games, music e.t.c.) for accomplishing tasks.", "As much as you can, employ group work, presentations and discussions."],
+        "Agreeableness": [],
+        "Neuroticism": []
+    }
+}
