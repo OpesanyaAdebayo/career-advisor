@@ -1,6 +1,6 @@
 let mongojs =  require('mongojs');
 let bcrypt = require('bcryptjs');
-let db = mongojs('process.env.MLAB_URI', ['users'], { ssl: true }); // Replace with mlab credentials from .env file
+let db = mongojs(process.env.MLAB_SESSION_URI, ['users']); // Replace with mlab credentials from .env file
 let salt = bcrypt.genSaltSync(10);
 let errormsg;
 
