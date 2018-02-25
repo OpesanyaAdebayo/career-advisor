@@ -33,7 +33,7 @@ app.use(session({
     resave: false, //don't save session if unmodified
     saveUninitialized: false, // don't create session until something stored
     store: new MongoStore({
-        url: process.env.MLAB_URI, //replace with database url from env file
+        url: process.env.MLAB_SESSION_URI, //replace with database url from env file
         ttl: 36000
     }),
     // cookie: {secure:true}
