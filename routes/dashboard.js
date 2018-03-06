@@ -18,13 +18,15 @@ router.get('/', function (req, res, next) {
         let dominantInterest = getRIASEC.getDominantInterest(userProfile, sortedProfile);
 
         dominantInterestDescription = interestDescriptions.descriptions[dominantInterest];
+        dominantInterestHobbies = interestDescriptions.hobbies[dominantInterest];
 
         res.render('dashboard', {
           title: 'Career Advisor',
           firstName: userProfile.firstName,
           lastName: userProfile.lastName,
           profileSummary: userProfile.summary,
-          dominantInterestDescription: dominantInterestDescription
+          dominantInterestDescription: dominantInterestDescription,
+          dominantInterestHobbies: dominantInterestHobbies
         });
       });
   }
