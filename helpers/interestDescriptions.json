@@ -5,5 +5,12 @@
         "Social": ["Involve coordinating others in order to teach, develop, or train them.","Require consistent interaction with other people and emphasize social competencies.","Value helping people, sharing information and solving social problems.","Generally do not require the use of tools or machines to get work done.","Help you see yourself as supportive, friendly, understanding and trustworthy."],
         "Enterprising": ["Are business oriented, and often want social events to have a purpose beyond socializing.","Put you in a position to provide leadership, delegate responsibility and influence others.", "Focus on leading and persuading people, selling things and ideas.", "Help you see yourself as energetic, passionate, socialble and ambitious.", "Encourage teamwork and group coordination."],
         "Conventional": ["Emphasize coordination, organization, precision and attention to detail.", "Require continuous learning, innovation, and fast-paced improvement.", "Can include working with data and details more than with ideas.", "Prefer clearly defined, practical problems, and solve problems by methodical, procedural activities.", "In troubleshooting and problem solving, depend on thinking, collecting data, and making careful analyses."]
+    },
+    "hobbies": {
+        "Artistic": ["Photography", "Creative Writing", "Take dance lessons", "Playing a musical instrument", "Watch Sci-Fi movies"],
+        "Investigative": ["Join a book club", "Solve crossword puzzles", "Play board games", "Learn a new language", "Read on an interesting subject"],
+        "Social": ["Make a phone call to that funny person", "Volunteer with a social action group", "Play a team sport", "See a movie with a group of friends"],
+        "Enterprising": ["Watch/Discuss politics", "Read business journals", "Develop a business idea", "Check out Forbes' billionaires list"],
+        "Conventional": ["Play computer orcard games", "Collect memorabilia", "Manage your personal finances", "Write family history"]
     }
 }

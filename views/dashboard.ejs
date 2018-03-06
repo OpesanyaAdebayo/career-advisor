@@ -29,29 +29,42 @@
   <section id="summary">
     <div class="container-fluid">
       <div class="row">
+
         <div class="col-md-6">
           <div class="card">
             <h4 class="card-header">About You</h4>
             <div class="card-body">
-              <!-- <h4 class="card-title">About You</h4> -->
               <p class="card-text"> <%= profileSummary %> </p>
             </div>
           </div>
         </div>
+
         <div class="col-md-6">
           <div class="card">
-            <h4 class="card-header">You are very likely to do best in careers that:</h4>
+            <h4 class="card-header">You are likely to do best in careers that:</h4>
             <div class="card-body">
-              <!-- <h4 class="card-title">You are very likely to do best in careers that:</h4> -->
               <ul>
                 <% for (let i=0; i < dominantInterestDescription.length; i++) { %>
                   <li> <%= dominantInterestDescription[i] %> </li>
                 <% } %>
               </ul>
-
             </div>
           </div>
         </div>
+
+        <div class="col-md-6">
+          <div class="card">
+            <h4 class="card-header">Need some suggestions for leisure?</h4>
+            <div class="card-body">
+              <ul>
+                <% for (let i=0; i < dominantInterestHobbies.length; i++) { %>
+                  <li> <%= dominantInterestHobbies[i] %> </li>
+                <% } %>
+              </ul>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
