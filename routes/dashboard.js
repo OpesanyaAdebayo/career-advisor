@@ -3,6 +3,7 @@ let router = express.Router();
 let getProfile = require('../helpers/db/getProfile');
 let getRIASEC = require('../helpers/getRIASEC');
 let interestDescriptions = require('../helpers/interestDescriptions.json');
+let careerList = require('../helpers/careerList.json');
 let userProfile;
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -17,6 +18,9 @@ router.get('/', function (req, res, next) {
         let sortedProfile = getRIASEC.sortProfile(retrievedProfile);
         let dominantInterest = getRIASEC.getDominantInterest(userProfile, sortedProfile);
 
+        let careerCode = getRIASEC.getCareerCode(userProfile, sortedProfile);
+        let careerSuggestions = careerList[careerCode];
+
         dominantInterestDescription = interestDescriptions.descriptions[dominantInterest];
         dominantInterestHobbies = interestDescriptions.hobbies[dominantInterest];
 
@@ -26,7 +30,8 @@ router.get('/', function (req, res, next) {
           lastName: userProfile.lastName,
           profileSummary: userProfile.summary,
           dominantInterestDescription: dominantInterestDescription,
-          dominantInterestHobbies: dominantInterestHobbies
+          dominantInterestHobbies: dominantInterestHobbies,
+          careerSuggestions: careerSuggestions
         });
       });
   }
