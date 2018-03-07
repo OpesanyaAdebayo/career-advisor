@@ -52,19 +52,34 @@
           </div>
         </div>
 
+      </div>
+
+      <!-- <div class="row">
         <div class="col-md-6">
-          <div class="card">
-            <h4 class="card-header">Need some suggestions for leisure?</h4>
-            <div class="card-body">
-              <ul>
-                <% for (let i=0; i < dominantInterestHobbies.length; i++) { %>
-                  <li> <%= dominantInterestHobbies[i] %> </li>
-                <% } %>
-              </ul>
+            <div class="card">
+              <h4 class="card-header">Need some suggestions for leisure?</h4>
+              <div class="card-body">
+                <ul>
+                  <% for (let i=0; i < dominantInterestHobbies.length; i++) { %>
+                    <li> <%= dominantInterestHobbies[i] %> </li>
+                  <% } %>
+                </ul>
+              </div>
+            </div>
+          </div> -->
+
+          <div class="col-md-6">
+            <div class="card">
+                <h4 class="card-header">Career Suggestions</h4>
+              <div class="card-body">
+                <ul>
+                  <% for (let career of careerSuggestions) { %>
+                    <li> <%= career.name %> </li>
+                  <% } %>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
-
       </div>
     </div>
   </section>
