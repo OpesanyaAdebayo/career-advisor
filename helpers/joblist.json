@@ -1,9 +1,0 @@
-{
-    "occupations": {
-        "Artistic": ["Modelling", "Acting", "Floral Designing", "Interior Designing", "Music", "Dance", "Fashion Designing", "Makeup Artist", "Graphics Designing", "Acting", "Film and Video Editing", "Animation", "Photography", "Writing", "On-air Personality"],
-        "Investigative": ["Software Development", "Engineering", "Medicine", "Urban and Regional Planning", "Chemistry", "Physics", "Political Science", "Sociology", "Surveying", "Mathematics", "Geography", "History", "Pharmacy"],
-        "Social": ["Customer Service Rep", "Dentistry", "Psychology"],
-        "Enterprising": [],
-        "Conventional": []
-    }
-}

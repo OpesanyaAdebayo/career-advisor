@@ -1,7 +1,7 @@
 var express = require('express');
 let router = express.Router();
-let saveHandle =require('../helpers/db/saveHandle');
-let getTweets = require('../helpers/getTweets');
+let saveHandle = require('../helpers/db/saveHandle');
+let twitter = require('../helpers/twitter');
 let personality = require('../helpers/personality');
 let getProfile = require('../helpers/db/getProfile');
 let saveProfile = require('../helpers/db/saveProfile');
@@ -19,13 +19,18 @@ router.get('/', function (req, res, next) {
 
 router.post('/', function (req, res, next) {
     let handle = req.body.twitterHandle;
-    saveHandle.saveToProfile(handle, req.session.UID)
-    .then((feedback) => getTweets.processTweets(feedback.twitterHandle))
-    .then((tweets) => personality.getPersonality(tweets))
-    .then((profile) => saveProfile.saveProfile(profile,req.session.UID))
-    .then((personalityProfile) => personality.getTextSummary(personalityProfile.personality_profile))
-    .then((summary) => saveProfile.saveSummary(summary,req.session.UID))
-    .then((savedProfile) => res.json(savedProfile));
+    // saveHandle.saveToProfile(handle, req.session.UID)
+    twitter.getTwitterProfile(handle)
+        .then((twitterProfile) => saveHandle.saveToProfile(twitterProfile, req.session.UID))
+        .then((profile) => twitter.processTweets(profile.twitterHandle))
+        .then((tweets) => personality.getPersonality(tweets))
+        .then((personalityProfile) => saveProfile.savePersonalityProfile(personalityProfile, req.session.UID))
+        .then((personalityProfile) => personality.getTextSummary(personalityProfile.personality_profile))
+        .then((summary) => saveProfile.saveSummary(summary, req.session.UID))
+        .then((savedProfile) => res.json(savedProfile));
+        // .catch((error) => {
+        //     res.render('error');
+        // });
 });
 
 module.exports = router;
