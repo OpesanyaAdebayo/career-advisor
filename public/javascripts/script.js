@@ -15,6 +15,10 @@ $("#loginForm").submit(function (event) {
     $.post("/auth/login", $("#loginForm").serialize(), (data) => {
         if (data.message) {
             alert(data.message);
+            $("#loginButton").removeAttr('disabled');
+            $("#signup").show();
+            $("small").show();
+
         } else {
             window.location.href = '/dashboard';
             return false;
@@ -33,6 +37,10 @@ $("#signupForm").submit(function (event) {
     $.post("/auth/signup", $("#signupForm").serialize(), (data) => {
         if (data.message) {
             alert(data.message);
+            $("#signupButton").removeAttr('disabled');
+            $("#login").show();
+            $("small").show();
+
         } else {
             window.location.href = '/inputhandle';
             return false;
