@@ -3,7 +3,7 @@ const dbUsername = process.env.DB_USERNAME;
 const dbPassword = process.env.DB_PASSWORD;
 let db = mongojs(process.env.MLAB_URI, ['users']);
 
-const saveProfile = (profile, UID) => {
+const savePersonalityProfile = (profile, UID) => {
     return new Promise((resolve, reject) => {
         db.users.findAndModify({
             query: {
@@ -46,6 +46,6 @@ const saveSummary = (summary, UID) => {
 };
 
 module.exports = {
-    saveProfile: saveProfile,
+    savePersonalityProfile: savePersonalityProfile,
     saveSummary: saveSummary
 };

@@ -45,6 +45,23 @@ const processTweets = (username) => {
     });
 };
 
+const getTwitterProfile = (username) => {
+    return new Promise ((resolve, reject) => {
+        let params = {
+            screen_name : username,
+            include_entities: false
+        };
+
+        client.get('users/show', params, (error, user) => {
+            if(error) {
+                return reject(Error(error));
+            }
+            resolve(user);
+        });
+    });
+};
+
 module.exports = {
-    processTweets: processTweets
+    processTweets: processTweets,
+    getTwitterProfile: getTwitterProfile
 };

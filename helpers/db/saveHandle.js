@@ -3,7 +3,7 @@ const dbUsername = process.env.DB_USERNAME;
 const dbPassword = process.env.DB_PASSWORD;
 let db = mongojs(process.env.MLAB_URI, ['users']);
 
-const saveToProfile = (handle, UID) => {
+const saveToProfile = (twitterProfile, UID) => {
     return new Promise((resolve, reject) => {
         db.users.findAndModify({
             query: {
@@ -11,7 +11,10 @@ const saveToProfile = (handle, UID) => {
             },
             update: {
                 $set: {
-                    twitterHandle: handle
+                    twitterId: twitterProfile.id_str,
+                    twitterHandle: twitterProfile.screen_name,
+                    location: twitterProfile.location,
+                    imageurl: twitterProfile.profile_image_url_https
                 }
             },
             new: true
