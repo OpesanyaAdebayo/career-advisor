@@ -1,30 +1,31 @@
-// let mongojs =  require('mongojs');
-// let bcrypt = require('bcryptjs');
-// let db = mongojs(process.env.MLAB_URI, ['users']); // Replace with credentials from .env file
-// let salt = bcrypt.genSaltSync(10);
-// let errormsg;
+let mongojs = require('mongojs');
+let bcrypt = require('bcryptjs');
+let db = mongojs(process.env.MLAB_URI, ['users']); // Replace with credentials from .env file
+let salt = bcrypt.genSaltSync(10);
 
-// const userLogin = (formInput) => {
-//     return new Promise((resolve, reject) => {
-//         db.users.findOne({
-//             email: formInput.email
-//         }, (err, profile) => {
-//             if (err) {
-//                 reject(Error(err));
-//             } else if (profile === null) {
-//                 errormsg = "This email address has not been registered.";
-//                 resolve(errormsg);
-//             } else {
-//                 if(bcrypt.compareSync(formInput.password, profile.password)) {
-//                     resolve("User Succesfully logged in.");
-//                 }
-//                else resolve("Incorrect password.");
-//             }
-//         });
-//     });
-// };
+const processFormInput = (formInput) => {
+    return new Promise((resolve, reject) => {
+        db.users.findOne({
+            email: formInput.email
+        }, (err, profile) => {
+            if (err) {
+                reject(Error(err));
+            }
+            else if (profile === null) {
+                reject(Error("unregistered email."));
+            }
+            else if (profile !== null && !bcrypt.compareSync(formInput.password, profile.password)) {
+                reject(Error("incorrect password."));
+            }
+            else {
+                resolve(profile);
+            }
+
+        });
+    });
+};
 
 
-// module.exports = {
-//     userLogin: userLogin
-// };
+module.exports = {
+    processFormInput: processFormInput
+};
