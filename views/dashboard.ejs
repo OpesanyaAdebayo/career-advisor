@@ -31,7 +31,7 @@
     <div class="container-fluid">
       <div class="row">
 
-        <div class="col-md-4">
+        <div class="col-md-6">
           <div class="card">
             <h4 class="card-header">About You</h4>
             <div class="card-body">
@@ -42,9 +42,9 @@
           </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-6">
           <div class="card">
-            <h4 class="card-header">You' are likely to do best in careers that:</h4>
+            <h4 class="card-header">You are likely to do best in careers that:</h4>
             <div class="card-body">
               <ul>
                 <% for (let i=0; i < dominantInterestDescription.length; i++) { %>
@@ -61,34 +61,37 @@
     </div>
   </section>
 
+  <section id="careerDetails">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8 col-xs-12 col-sm-12">
+          <h2>Career Suggestions</h2>
+            <% for (let career of careerSuggestions) { %>
+          <div id="accordion">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5>
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#<%= career.number %>" aria-expanded="true" aria-controls="<%= career.number %>"><%= career.name %></button>
+                        </h5>
+                    </div>
 
-
-  <!-- <div class="row">
-        <div class="col-md-6">
-            <div class="card">
-              <h4 class="card-header">Need some suggestions for leisure?</h4>
-              <div class="card-body">
-                <ul>
-                  <% for (let i=0; i < dominantInterestHobbies.length; i++) { %>
-                    <li> <%= dominantInterestHobbies[i] %> </li>
-                  <% } %>
-                </ul>
-              </div>
+                    <div id = "<%= career.number %>" class="collapse hide" aria-labelledby="<%= career.number %>" data-parent="#<%= career.number %>">
+                        <div class="card-body">
+                            <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
+                            non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+                            sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+                            helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                            vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't
+                            heard of them accusamus labore sustainable VHS.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div> -->
-
-  <!-- <div class="col-md-4">
-            <div class="card">
-                <h4 class="card-header">Career Suggestions</h4>
-              <div class="card-body">
-                <ul>
-                  <% for (let career of careerSuggestions) { %>
-                    <li> <%= career.name %> </li>
-                  <% } %>
-                </ul>
-              </div>
-            </div>
-          </div> -->
+            <% } %>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
