@@ -14,7 +14,7 @@ const saveToProfile = (twitterProfile, UID) => {
                     twitterId: twitterProfile.id_str,
                     twitterHandle: twitterProfile.screen_name,
                     location: twitterProfile.location,
-                    imageurl: twitterProfile.profile_image_url_https
+                    imageUrl: twitterProfile.profile_image_url_https
                 }
             },
             new: true
