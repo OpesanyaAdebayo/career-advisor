@@ -19,6 +19,7 @@
     "mongojs": "^2.4.1",
     "morgan": "~1.8.1",
     "personality-text-summary": "^2.1.6",
+    "request": "^2.83.0",
     "serve-favicon": "~2.4.2",
     "twitter": "^1.7.1",
     "watson-developer-cloud": "^2.41.1"

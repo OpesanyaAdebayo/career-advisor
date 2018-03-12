@@ -13,6 +13,7 @@ let index = require('./routes/index');
 let auth = require('./routes/auth');
 let dashboard = require('./routes/dashboard');
 let inputhandle = require('./routes/inputhandle');
+let getCareerDetails = require('./routes/getCareerDetails');
 
 let app = express();
 
@@ -44,6 +45,7 @@ app.use('/', index);
 app.use('/auth', auth);
 app.use('/dashboard', dashboard);
 app.use('/inputhandle', inputhandle);
+app.use('/getCareerDetails', getCareerDetails);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
