@@ -61,3 +61,14 @@ $("#twitterHandleForm").submit(function (event) {
     });
     event.preventDefault();
 });
+
+$("#careerDetails").on("click", ".btn-link", (event) => {
+    let number = $(event.currentTarget).parent().next().attr("id");
+
+    $.post("/getCareerDetails", {number: number}, function (data) {
+        console.log(Object.keys(data));
+        // $(event.currentTarget).parent().next().child(".description").html(data.description);
+        // $(".description").html(data.description);
+        $(event.currentTarget).parent().next().find(".description").html(data.description);
+    });
+});
