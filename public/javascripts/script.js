@@ -65,10 +65,34 @@ $("#twitterHandleForm").submit(function (event) {
 $("#careerDetails").on("click", ".btn-link", (event) => {
     let number = $(event.currentTarget).parent().next().attr("id");
 
-    $.post("/getCareerDetails", {number: number}, function (data) {
-        console.log(Object.keys(data));
-        // $(event.currentTarget).parent().next().child(".description").html(data.description);
-        // $(".description").html(data.description);
-        $(event.currentTarget).parent().next().find(".description").html(data.description);
+    $.post("/getCareerDetails", {
+        number: number
+    }, function (data) {
+        console.log(data);
+        let clickedCareer = $(event.currentTarget).parent().next();
+
+        clickedCareer.find(".description").html(data.description);
+
+        let titles = data.reportedJobTitles.map((title) => "<li class>" + title + "</li>");
+        clickedCareer.find(".jobTitles").append(titles.join(''));
+
+        if (!data.relatedOccupations) {
+            clickedCareer.find(".occupation").hide();
+        } else {
+            let relatedOccupations = data.relatedOccupations.map((occupation) => `<li class = 'relatedOccupation'><a href = '/getRelated/${occupation.code}'>${occupation.title}</a></li>`);
+            clickedCareer.find(".relatedOccupations").append(relatedOccupations.join(''));
+        }
+
+        let tasks = data.tasks.map((task) => `<li class = 'task'>${task.name}</li>`);
+        clickedCareer.find(".tasks").append(tasks.join(''));
+
+        let knowledgeAreas = data.knowledge.map((area) => `<li class = 'area'>${area.name}</li>`);
+        clickedCareer.find(".knowledgeAreas").append(knowledgeAreas.join(''));
+
+        let skills = data.skills.map((skill) => `<li class = 'area'>${skill.name}</li>`);
+        clickedCareer.find(".skills").append(skills.join(''));
+
+        let workStyles = data.workStyles.map((style) => `<p class = 'workStyle'>${style.description}</p>`).map((style) => style.replace("Job","Career"));
+        clickedCareer.find(".workStyles").append(workStyles.join(''));
     });
 });

@@ -1,9 +1,9 @@
 var express = require('express');
 let router = express.Router();
 let getProfile = require('../helpers/db/getProfile');
-let getRIASEC = require('../helpers/getRIASEC');
-let interestDescriptions = require('../helpers/interestDescriptions.json');
-let riasecList = require('../helpers/riasecList.json');
+let getRIASEC = require('../helpers/careerDetails/getRIASEC');
+let interestDescriptions = require('../helpers/careerDetails/interestDescriptions.json');
+let riasecList = require('../helpers/careerDetails/riasecList.json');
 let userProfile;
 /* GET home page. */
 router.get('/', function (req, res, next) {
