@@ -1,8 +1,8 @@
 var express = require('express');
 let router = express.Router();
 let saveHandle = require('../helpers/db/saveHandle');
-let twitter = require('../helpers/twitter');
-let personality = require('../helpers/personality');
+let twitter = require('../helpers/twitter/twitter');
+let personality = require('../helpers/personality/personality');
 let getProfile = require('../helpers/db/getProfile');
 let saveProfile = require('../helpers/db/saveProfile');
 
