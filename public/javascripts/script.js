@@ -36,10 +36,14 @@ $("#signupForm").submit(function (event) {
 
     $.post("/auth/signup", $("#signupForm").serialize(), (data) => {
         if (data.message) {
-            alert(data.message);
+            $(".error").html(data.message);
+            $(".error").html(data.message);
+            $(".alert").addClass("show");
             $("#signupButton").removeAttr('disabled');
+            setTimeout(() => $(".alert").removeClass("show"), 4000)
             $("#login").show();
             $("small").show();
+
 
         } else {
             window.location.href = '/inputhandle';
@@ -57,8 +61,11 @@ $("#twitterHandleForm").submit(function (event) {
     let processedHandle = rawFormInput.toLowerCase();
     $.post("/inputhandle", $("#twitterHandleForm").serialize(), function (data) {
         if (data.message) {
-            alert(data.message);
+            $(".error").html(data.message);
+            $(".alert").addClass("show");
             $("#submitHandle").removeAttr('disabled');
+            setTimeout(() => $(".alert").removeClass("show"), 4000);
+
         } else {
             window.location.href = '/dashboard';
             return false;

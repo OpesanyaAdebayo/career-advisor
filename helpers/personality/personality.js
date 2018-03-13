@@ -21,7 +21,7 @@ const getPersonality = (tweets) => {
         };
         personality_insights.profile(params, function (error, personalityProfile) {
             if (error)
-                reject(Error("You do not have sufficient tweets."));
+                reject(Error("Ouch! You do not have sufficient tweets. Sorry."));
             else
                 resolve(personalityProfile);
         });
@@ -33,7 +33,7 @@ const getTextSummary = (personalityProfile) => {
     return new Promise((resolve,reject) => {
         let textSummary  = v3EnglishTextSummaries.getSummary(personalityProfile);
         if(typeof(textSummary) !== 'string') {
-            reject(Error("could not get summary."));
+            reject(Error("Could not get summary."));
         }
         else  {
             resolve(textSummary);

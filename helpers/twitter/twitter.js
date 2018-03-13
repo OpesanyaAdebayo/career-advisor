@@ -54,7 +54,7 @@ const getTwitterProfile = (username) => {
 
         client.get('users/show', params, (error, user) => {
             if(error) {
-                reject(Error("There is a problem with your twitter handle."));
+                reject(Error("Uh-oh! There seems to be a problem with your Twitter handle."));
             }
             resolve(user);
         });
