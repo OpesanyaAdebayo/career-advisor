@@ -28,7 +28,7 @@
   </section>
 
   <section id="summary">
-    <div class="container-fluid">
+    <div class="container">
       <div class="row">
 
         <div class="col-md-6">
@@ -62,10 +62,10 @@
   </section>
 
   <section id="careerDetails">
-    <div class="container-fluid">
+    <div class="container">
       <div class="row">
-        <div class="col-md-8 col-xs-12 col-sm-12">
-          <h2>Career Suggestions</h2>
+        <div class="col-md-8">
+          <h2 style="margin-bottom:4vh">Career Suggestions</h2>
           <div id="accordion">
             <% for (let career of careerSuggestions) { %>
                 <div class="card">
@@ -75,15 +75,20 @@
 
                     <div id = "<%= career.number %>" class="collapse" aria-labelledby="<%= career.number %>" data-parent="#accordion">
                         <div class="card-body">
-                            <h5>Description</h5>
-                            <p class="description"></p>
+                          <div class="content">
+                            <div class="row">
+                              <div class="col-md-12">
+                                <h5>Description</h5>
+                                <p class="description"></p>
+                              </div>
+                            </div>
                             <div class="row">
                               <div class="col-md-6">
-                                <h5>Some job titles in this career:</h5>
+                                <h5>Job titles in this career:</h5>
                                 <ul class="jobTitles"></ul>
                               </div>
                               <div class="col-md-6 occupation">
-                                <h5>Some occupations related to this career:</h5>
+                                <h5>Related occupations:</h5>
                                 <ul class="relatedOccupations"></ul>
                               </div>
                             </div>
@@ -104,10 +109,12 @@
                               </div>
                             </div>
                             <div class="row">
-                              <div class="col-md-12 workStyles">
+                              <div class="col-md-12">
                                 <h5>Work Styles</h5>
+                                <ul class="workStyles"></ul>
                               </div>
                             </div>
+                          </div>
                         </div>
                     </div>
                 </div>
