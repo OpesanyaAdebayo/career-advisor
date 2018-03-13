@@ -20,8 +20,9 @@ const getPersonality = (tweets) => {
             }
         };
         personality_insights.profile(params, function (error, personalityProfile) {
-            if (error)
-                reject(Error("Ouch! You do not have sufficient tweets. Sorry."));
+            if (error.code == 400){
+                reject(Error("Ouch! You either do not have sufficient tweets, or your language is not supported. Sorry."));
+            }
             else
                 resolve(personalityProfile);
         });

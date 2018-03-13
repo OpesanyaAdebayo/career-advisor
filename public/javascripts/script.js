@@ -14,8 +14,10 @@ $("#loginForm").submit(function (event) {
     $("small").hide();
     $.post("/auth/login", $("#loginForm").serialize(), (data) => {
         if (data.message) {
-            alert(data.message);
+            $(".error").html(data.message);
+            $(".alert").addClass("show");
             $("#loginButton").removeAttr('disabled');
+            setTimeout(() => $(".alert").removeClass("show"), 4000);
             $("#signup").show();
             $("small").show();
 
@@ -37,10 +39,9 @@ $("#signupForm").submit(function (event) {
     $.post("/auth/signup", $("#signupForm").serialize(), (data) => {
         if (data.message) {
             $(".error").html(data.message);
-            $(".error").html(data.message);
             $(".alert").addClass("show");
             $("#signupButton").removeAttr('disabled');
-            setTimeout(() => $(".alert").removeClass("show"), 4000)
+            setTimeout(() => $(".alert").removeClass("show"), 4000);
             $("#login").show();
             $("small").show();
 
@@ -50,7 +51,12 @@ $("#signupForm").submit(function (event) {
             return false;
         }
     }).fail(() => {
-        alert("Please check your connectivity and refresh the page.");
+        $(".error").html("Please check your connectivity and refresh the page.");
+        $(".alert").addClass("show");
+        $("#signupButton").removeAttr('disabled');
+        setTimeout(() => $(".alert").removeClass("show"), 4000);
+        $("#login").show();
+        $("small").show();
     });
     event.preventDefault();
 });
