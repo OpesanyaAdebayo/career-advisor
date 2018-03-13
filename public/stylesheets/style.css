@@ -1,11 +1,38 @@
-
 body {
   font-family: 'Lato', sans-serif;
 }
 
-.card {
-  /* border: 1px solid #ffd700; */
+#accordion .row {
+  margin-bottom: 4vh;
 }
+
+#accordion h5 {
+  border-left: 6px solid rgb(2, 56, 100);
+  color: rgb(2, 56, 100);
+  padding-left: 2vw;
+}
+
+#accordion ul {
+  list-style: none;
+  margin-top: 2vh;
+}
+
+#careerDetails .card {
+  margin-bottom: 1vh;
+}
+
+.description,
+.jobTitles,
+.relatedOccupations,
+.tasks,
+.knowledgeAreas,
+.skills,
+.workStyles,
+  {
+  margin-bottom: 2vh;
+  margin-top: 2vh;
+}
+
 .card-header {
   border-top: 6px solid rgb(64, 164, 244);
   border-bottom: none;
@@ -37,9 +64,9 @@ input {
 }
 
 .input-group-addon {
-  border-color: none;
-  border: none;
   background-color: transparent;
+  border: none;
+  border-color: none;
 }
 
 #intro {
@@ -53,24 +80,40 @@ input {
   margin-top: 5vh;
 }
 
+li {
+  list-style: none;
+  margin-bottom: 2vh;
+}
+
+li::before {
+  color: red;
+  content: "\25AA";
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em
+}
+
 #loginContainer {
   display: none;
 }
 
-#loginDiv, #signupDiv {
+#loginDiv,
+#signupDiv {
   background-color: #ffffff;
   padding: 30px;
 }
 
-
-#loginButton, #loginContainer form, #signupButton, #signupContainer form {
+#loginButton,
+#loginContainer form,
+#signupButton,
+#signupContainer form {
   margin-top: 4vh;
 }
 
 .main {
-  left:39%;
+  left: 39%;
   position: absolute;
-  top:15%;
+  top: 15%;
 }
 
 .nav-item {
@@ -82,13 +125,22 @@ input {
   color: tomato !important;
 }
 
-p, li {
-  color: rgba(0,0,0,.70) !important;
+p {
+  line-height: 4.9vh;
+}
+
+p,
+li {
+  color: rgba(0, 0, 0, .70) !important;
   font-weight: 400;
 }
 
 .red {
   color: red;
+}
+
+section {
+  margin-bottom: 8vh;
 }
 
 #summary {
@@ -124,4 +176,3 @@ p, li {
   outline: 0px !important;
   -webkit-appearance: none;
 }
-

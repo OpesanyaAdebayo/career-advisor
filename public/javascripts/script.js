@@ -64,12 +64,15 @@ $("#twitterHandleForm").submit(function (event) {
 
 $("#careerDetails").on("click", ".btn-link", (event) => {
     let number = $(event.currentTarget).parent().next().attr("id");
+    let clickedCareer = $(event.currentTarget).parent().next();
+
+    clickedCareer.find(".content").hide();
 
     $.post("/getCareerDetails", {
         number: number
     }, function (data) {
-        console.log(data);
-        let clickedCareer = $(event.currentTarget).parent().next();
+
+        clickedCareer.find(".content").show();
 
         clickedCareer.find(".description").html(data.description);
 
@@ -79,7 +82,7 @@ $("#careerDetails").on("click", ".btn-link", (event) => {
         if (!data.relatedOccupations) {
             clickedCareer.find(".occupation").hide();
         } else {
-            let relatedOccupations = data.relatedOccupations.map((occupation) => `<li class = 'relatedOccupation'><a href = '/getRelated/${occupation.code}'>${occupation.title}</a></li>`);
+            let relatedOccupations = data.relatedOccupations.map((occupation) => `<li class = 'relatedOccupation'>${occupation.title}</li>`);
             clickedCareer.find(".relatedOccupations").append(relatedOccupations.join(''));
         }
 
@@ -92,7 +95,7 @@ $("#careerDetails").on("click", ".btn-link", (event) => {
         let skills = data.skills.map((skill) => `<li class = 'area'>${skill.name}</li>`);
         clickedCareer.find(".skills").append(skills.join(''));
 
-        let workStyles = data.workStyles.map((style) => `<p class = 'workStyle'>${style.description}</p>`).map((style) => style.replace("Job","Career"));
+        let workStyles = data.workStyles.map((style) => `<li class = 'workStyle'>${style.description.replace("Job","Career")}</li>`);
         clickedCareer.find(".workStyles").append(workStyles.join(''));
     });
 });
