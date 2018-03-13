@@ -56,8 +56,13 @@ $("#twitterHandleForm").submit(function (event) {
     let rawFormInput = $("#twitterHandle").val();
     let processedHandle = rawFormInput.toLowerCase();
     $.post("/inputhandle", $("#twitterHandleForm").serialize(), function (data) {
-        window.location.href = '/dashboard';
-        return false;
+        if (data.message) {
+            alert(data.message);
+            $("#submitHandle").removeAttr('disabled');
+        } else {
+            window.location.href = '/dashboard';
+            return false;
+        }
     });
     event.preventDefault();
 });

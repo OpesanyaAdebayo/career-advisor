@@ -27,10 +27,12 @@ router.post('/', function (req, res, next) {
         .then((personalityProfile) => saveProfile.savePersonalityProfile(personalityProfile, req.session.UID))
         .then((personalityProfile) => personality.getTextSummary(personalityProfile.personality_profile))
         .then((summary) => saveProfile.saveSummary(summary, req.session.UID))
-        .then((savedProfile) => res.json(savedProfile));
-        // .catch((error) => {
-        //     res.render('error');
-        // });
+        .then((savedProfile) => res.json(savedProfile))
+        .catch((error) => {
+            res.json({
+                message: error.message
+            });
+        });
 });
 
 module.exports = router;

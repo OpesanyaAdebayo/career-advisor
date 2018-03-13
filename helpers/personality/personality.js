@@ -21,7 +21,7 @@ const getPersonality = (tweets) => {
         };
         personality_insights.profile(params, function (error, personalityProfile) {
             if (error)
-                reject(Error(error));
+                reject(Error("You do not have sufficient tweets."));
             else
                 resolve(personalityProfile);
         });
