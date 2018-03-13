@@ -71,7 +71,7 @@ $("#careerDetails").on("click", ".btn-link", (event) => {
     $.post("/getCareerDetails", {
         number: number
     }, function (data) {
-
+        console.log(data);
         clickedCareer.find(".content").show();
 
         clickedCareer.find(".description").html(data.description);
