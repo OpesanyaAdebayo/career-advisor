@@ -37,6 +37,7 @@ const processTweets = (username) => {
                 params.max_id = tweets[tweets.length - 1].id - 1;
                 client.get('statuses/user_timeline', params, fetchTweets);
             } else {
+                // console.log(JSON.stringify(tweets, null, 2));
                 //if there are no more tweets to retrieve, just resolve already fetched tweets
                 resolve(tweets);
             }
@@ -56,6 +57,7 @@ const getTwitterProfile = (username) => {
             if(error) {
                 reject(Error("Uh-oh! There seems to be a problem with your Twitter handle."));
             }
+            // console.log(JSON.stringify(user, null, 2));
             resolve(user);
         });
     });

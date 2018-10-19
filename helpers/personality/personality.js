@@ -1,9 +1,11 @@
+require("dotenv").config();
 let PersonalityInsightsV3 =require('watson-developer-cloud/personality-insights/v3');
 let personality_insights = new PersonalityInsightsV3({
     username: process.env.PERSONALITY_INSIGHTS_USERNAME,
     password: process.env.PERSONALITY_INSIGHTS_PASSWORD,
     version_date: '2017-10-13'
 });
+
 let PersonalityTextSummaries = require('personality-text-summary');
 let v3EnglishTextSummaries = new PersonalityTextSummaries({ locale: 'en', version: 'v3' });
 

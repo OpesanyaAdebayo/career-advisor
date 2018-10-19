@@ -1,4 +1,4 @@
-
+//@ts-check
 const sortProfile = (profile) => {
     // remove unnecessary details from personality profile
     let trimmedProfile = profile.personality_profile.personality.map((facet) => {

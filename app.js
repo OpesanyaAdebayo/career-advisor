@@ -72,4 +72,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+console.log(process.pid);
+
 module.exports = app;

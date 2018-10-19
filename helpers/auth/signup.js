@@ -21,7 +21,9 @@ const processFormInput = (formInput) => {
                     if (err) {
                         reject(Error(err));
                     }
-                    else resolve(savedProfile);
+                    else {
+                        resolve(savedProfile);
+                    }
                 });
             }
             else {
