@@ -8,20 +8,22 @@
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "body-parser": "~1.17.1",
+    "body-parser": "^1.18.3",
     "connect-mongo": "^2.0.0",
+    "connect-redis": "^3.3.3",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.3",
     "dotenv": "^4.0.0",
     "ejs": "~2.5.6",
-    "express": "~4.15.2",
+    "express": "^4.16.4",
     "express-session": "^1.15.6",
     "mongojs": "^2.4.1",
-    "morgan": "~1.8.1",
+    "morgan": "^1.9.1",
     "personality-text-summary": "^2.1.6",
-    "request": "^2.83.0",
+    "redis": "^2.8.0",
+    "request": "^2.88.0",
     "serve-favicon": "~2.4.2",
     "twitter": "^1.7.1",
-    "watson-developer-cloud": "^2.41.1"
+    "watson-developer-cloud": "^3.12.0"
   }
 }
