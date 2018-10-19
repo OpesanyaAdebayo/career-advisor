@@ -9,7 +9,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
-    "connect-mongo": "^2.0.0",
+    "connect-mongo": "^2.0.1",
     "connect-redis": "^3.3.3",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.3",
@@ -17,7 +17,7 @@
     "ejs": "~2.5.6",
     "express": "~4.16.0",
     "express-session": "^1.15.6",
-    "mongojs": "^2.4.1",
+    "mongojs": "^2.6.0",
     "morgan": "~1.9.0",
     "personality-text-summary": "^2.1.6",
     "request": "^2.84.0",
